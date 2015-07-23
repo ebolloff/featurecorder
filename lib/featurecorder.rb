@@ -1,10 +1,12 @@
 require "featurecorder/version"
 require "featurecorder/dictionary"
 require "featurecorder/translate"
+require "nokogiri"
+require "ascii"
 
 module Featurecorder
 
-  def run()
+  def self.run()
     file = File.open(ARGV[0])
     doc = Nokogiri::XML(file)
     steps = doc.xpath('//selenese').map do |doc|
@@ -22,14 +24,14 @@ module Featurecorder
     clean_value(steps)
     feature = create_feature(steps)
 
-    File.open("features/#{feature_name.split(' ').each { |word| word.capitalize! }.
+    File.open("#{feature_name.split(' ').each { |word| word.capitalize! }.
       join('')}.feature", 'w') do |file|
       file.write("Feature: #{feature_name}\nScenario: #{scenario_name}" +
         feature.uniq.join("\n"))
       file.close
     end
 
-    File.open("features/step_definitions/#{Ascii.process(feature_name).
+    File.open("#{Ascii.process(feature_name).
       gsub!(/\s+/, '_').downcase}_steps.rb", 'w') do |file|
       file.write(create_steps(feature, steps).join("\n"))
       file.close
