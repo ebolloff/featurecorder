@@ -1,4 +1,23 @@
 #!/usr/bin/env ruby
 require "../lib/featurecorder"
+require 'docopt'
 
-Featurecorder::run()
+doc = <<DOCOPT
+
+Usage:
+  #{File.basename(__FILE__)} [options] <file>
+
+Options:
+  -s --scenario-name=<scenario>   Name of the scenario.
+  -f --feature-name=<feature>     Name of the feature.
+  -o --output-directory=<dir>     Output directory for generated files. Default is current directory.
+  -h --help                       Show this screen.
+
+DOCOPT
+
+begin
+  d = Docopt::docopt(doc)
+  Featurecorder::run(d["--scenario-name"], d["--feature-name"], d["<file>"], d["--output-directory"])
+rescue Docopt::Exit => e
+  puts e.message
+end

@@ -32,4 +32,5 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.6.2'
   spec.add_runtime_dependency 'ascii', '~> 1.0', '>= 1.0.1'
+  spec.add_runtime_dependency 'docopt', '>= 0.5'
 end
