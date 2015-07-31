@@ -35,8 +35,8 @@ module Featurecorder
     feature = create_feature(steps)
 
     begin
-      File.open("#{output_dir}/#{feature_name.split(' ').each { |word| word.capitalize! }.
-        join('')}.feature", 'w') do |file|
+      File.open("#{output_dir}/#{Ascii.process(feature_name.split(' ').
+        each { |word| word.capitalize! }.join(''))}.feature", 'w') do |file|
         file.write("Feature: #{feature_name}\n\nScenario: #{scenario_name}\n\n" +
           feature.uniq.join("\n"))
         file.close
