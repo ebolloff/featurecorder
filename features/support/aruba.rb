@@ -1,1 +1,1 @@
-require 'cucumber/aruba'
+require 'aruba/cucumber'
