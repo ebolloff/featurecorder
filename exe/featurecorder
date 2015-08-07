@@ -17,7 +17,7 @@ DOCOPT
 
 begin
   d = Docopt::docopt(doc)
-  Featurecorder::run(d["--scenario-name"], d["--feature-name"], d["<file>"], d["--output-directory"])
+  Featurecorder::run(d["--scenario-name"], d["--feature-name"], d["<file>"], d["--output-directory"] || ".")
 rescue Docopt::Exit => e
   puts e.message
 end
