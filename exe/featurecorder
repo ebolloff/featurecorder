@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require "../lib/featurecorder"
+require "featurecorder"
 require 'docopt'
 
 doc = <<DOCOPT
