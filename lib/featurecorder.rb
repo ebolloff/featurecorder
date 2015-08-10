@@ -8,8 +8,18 @@ require 'docopt'
 module Featurecorder
 
   def self.run(scenario_name, feature_name, file_name, output_dir)
+
     file = File.open(file_name)
     doc = Nokogiri::XML(file)
+
+    if doc.root.nil?
+      abort "Not a valid XML document"
+    elsif !doc.root.name.eql?('TestCase')
+      abort "Not a valid Selenium XML Test"
+    elsif !doc.xpath('//selenese').any?
+      abort "Empty Selenium XML Test"
+    end
+
     steps = doc.xpath('//selenese').map do |doc|
       { command: doc.xpath('command').first.content,
         target: doc.xpath('target').first.content,
