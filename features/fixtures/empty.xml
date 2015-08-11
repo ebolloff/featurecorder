@@ -1,1 +1,3 @@
-Foo
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase seleniumIDEVersion="2.9.0" baseURL="http://td.iws.cs.ovgu.de/">
+</TestCase>
