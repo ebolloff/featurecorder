@@ -57,7 +57,9 @@ module Featurecorder
         file.close
       end
     rescue Errno::ENOENT => e
-      puts "Could not write file to #{output_dir}"
+      abort "Could not find #{output_dir}"
+    rescue Errno::EACCES => e
+      abort "Permission denied on #{output_dir}"
     end
   end
 
