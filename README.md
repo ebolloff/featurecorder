@@ -1,6 +1,7 @@
 # Featurecorder
 
 [![Build Status](https://travis-ci.org/ebolloff/featurecorder.svg?branch=master)](https://travis-ci.org/ebolloff/featurecorder)
+[![Coverage Status](https://coveralls.io/repos/ebolloff/featurecorder/badge.svg?branch=master&service=github)](https://coveralls.io/github/ebolloff/featurecorder?branch=master)
 
 This gem was build to translate recorded XML Selenium tests to Cucumber. At the moment it only works with the Ruby On Rails project [Test Ontohub](http://test.ontohub.org) because there some specific things that need to be treated in this project.
 
