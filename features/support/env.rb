@@ -1,6 +1,4 @@
 require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
-
 require 'aruba/cucumber'
 require 'coveralls'
 require 'simplecov'
@@ -15,3 +13,4 @@ Before do
 end
 
 Coveralls.wear!
+CodeClimate::TestReporter.start
