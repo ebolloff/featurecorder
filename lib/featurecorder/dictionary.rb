@@ -12,20 +12,20 @@ COMMANDS =
       sentence: lambda { |target, value| "When I click on '#{target}'" }
       }, #waitForPageToLoad
     verifyTitle: {
-      command: lambda { |target, value| "page.should have_content('#{value}')" },
-      sentence: lambda { |target, value| "Then I should see the title '#{value}'" }
+      command: lambda { |target, value| "page.should have_content('#{target}')" },
+      sentence: lambda { |target, value| "Then I should see the title '#{target}'" }
       },
     assertTitle: {
-      command: lambda { |target, value| "page.should have_content('#{value}')" },
-      sentence: lambda { |target, value| "Then I should see the title '#{value}'" }
+      command: lambda { |target, value| "page.should have_content('#{target}')" },
+      sentence: lambda { |target, value| "Then I should see the title '#{target}'" }
       },
     verifyTextPresent: {
       command: lambda { |target, value| "page.should have_content('#{value}')" },
       sentence: lambda { |target, value| "Then I should see the text '#{value}'" }
       },
     verifyElementPresent: {
-      command: lambda { |target, value| 'page.should have_css' },
-      sentence: lambda { |target, value| "Then I should see '#{value}'" }
+      command: lambda { |target, value| "page.should have_css('#{target}')" },
+      sentence: lambda { |target, value| "Then I should see '#{target}'" }
       },
     verifyText: {
       command: lambda { |target, value| "page.should have_content('#{value}')" },
@@ -51,7 +51,12 @@ TARGETS =
 BEGIN {
   def target(target)
     if TARGETS[target].nil?
-      target[/=\W*([^']+)/][$1]
+      t = target[/=\W*([^']+)/]
+      if t
+        t[$1]
+      else
+        target
+      end
     else
       TARGETS[target]
     end
