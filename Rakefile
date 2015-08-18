@@ -4,4 +4,4 @@ require 'cucumber/rake/task'
 
 Cucumber::Rake::Task.new(:features)
 
-task :default => [:build, :features]
+task :default => [:install, :features]
