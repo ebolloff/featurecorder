@@ -38,3 +38,14 @@ Then the exit status should be 1
 And the stderr should contain "Empty Selenium XML Test"
 And a file matching %r<.*\.rb> should not exist
 And a file matching %r<.*\.feature> should not exist
+
+Scenario: Parse to forbidden directory
+When I run `featurecorder ../../features/fixtures/login_cat.xml -f "global search" -s "search for cat" -o /`
+Then the exit status should be 1
+And the stderr should contain "Permission denied on /"
+
+Scenario: Parse to non-existent directory
+When I run `featurecorder ../../features/fixtures/login_cat.xml -f "global search" -s "search for cat" -o /foobar`
+Then the exit status should be 1
+And the stderr should contain "Could not find /foobar"
+
