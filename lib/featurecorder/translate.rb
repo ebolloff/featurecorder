@@ -23,5 +23,6 @@
   def clean_value(steps)
     steps.map do |step|
       step[:value] = step[:value][/(?:.*(?:exact:|glob:|regexp:))?(.*)/,1]
+      step[:target] = step[:target][/(?:.*(?:exact:|glob:|regexp:))?(.*)/,1]
     end
   end
