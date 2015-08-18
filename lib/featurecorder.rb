@@ -52,7 +52,7 @@ module Featurecorder
         file.close
       end
       File.open("#{output_dir}/#{Ascii.process(feature_name).
-        gsub!(/\s+/, '_').downcase}_steps.rb", 'w') do |file|
+        gsub(/\s+/, '_').downcase}_steps.rb", 'w') do |file|
         file.write(create_steps(feature, steps).join("\n"))
         file.close
       end
