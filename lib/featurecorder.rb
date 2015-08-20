@@ -45,17 +45,21 @@ module Featurecorder
     feature = create_feature(steps)
 
     begin
-      File.open("#{output_dir}/#{Ascii.process(feature_name.split(' ').
-        each { |word| word.capitalize! }.join(''))}.feature", 'w') do |file|
+      feature_file_name = "#{Ascii.process(feature_name.split(' ').
+        each { |word| word.capitalize! }.join(''))}.feature"
+      File.open("#{output_dir}/#{feature_file_name}", 'w') do |file|
         file.write("Feature: #{feature_name}\n\nScenario: #{scenario_name}\n\n" +
           feature.uniq.join("\n"))
         file.close
       end
-      File.open("#{output_dir}/#{Ascii.process(feature_name).
-        gsub(/\s+/, '_').downcase}_steps.rb", 'w') do |file|
+      puts "Successfully created #{feature_file_name}"
+      steps_file_name = "#{Ascii.process(feature_name).
+        gsub(/\s+/, '_').downcase}_steps.rb"
+      File.open("#{output_dir}/#{steps_file_name}", 'w') do |file|
         file.write(create_steps(feature, steps).join("\n"))
         file.close
       end
+      puts "Successfully created #{steps_file_name}"
     rescue Errno::ENOENT => e
       abort "Could not find #{output_dir}"
     rescue Errno::EACCES => e
