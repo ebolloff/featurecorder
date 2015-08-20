@@ -26,7 +26,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/ebollo
 If you're reading this, you hopefully want to test the Ruby On Rails project Ontohub on [Test Ontohub](http://test.ontohub.org).
 This site is in an similiar status like [Ontohub](http://ontohub.org), but it has a few test data for you to play with. May you want to check on some infos about Selenium and Cucumber before you test our site.
 
-What you need to do first is to install Mozilla Firefox (currently version 39.0), if you haven't yet. After that you need to install the Firefox plugins 'Selenium IDE' (currently version 2.9.0) and 'Selenium XML Formatter' (currently version 1.5.1), which allows you to export the recorded test as XML.
+What you need to do first is to install Mozilla Firefox (currently version 39.0), if you haven't yet. After that you need to install the Firefox plugins 'Selenium IDE' (currently version 2.9.0), 'Selenium XML Formatter' (currently version 1.5.1), which allows you to export the recorded test as XML, and 'Selenium IDE Button'(currently version 1.2.0.1) to start Selenium with an easy button click next to your address bar in Firefox.
 
 After that you need to change some options in Selenium. Start Selenium and click on Options -> Options. In the opened window you select the tab 'Locator Builders'. These handle the locators to find your selected elements in your tests. With drag & drop you can arrange the locators like this:
 
