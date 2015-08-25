@@ -49,7 +49,7 @@ module Featurecorder
         each { |word| word.capitalize! }.join(''))}.feature"
       File.open("#{output_dir}/#{feature_file_name}", 'w') do |file|
         file.write("Feature: #{feature_name}\n\nScenario: #{scenario_name}\n\n" +
-          feature.uniq.join("\n"))
+          feature.chunk{|x| x}.map(&:first).join("\n"))
         file.close
       end
       puts "Successfully created #{feature_file_name}"

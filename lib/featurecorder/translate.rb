@@ -17,7 +17,7 @@
       cucumber.push("#{str.first}(/^#{str.last.gsub(/([?+*{}])/,
        '\\\\\1')}$/) do\n\t#{commands.shift}\nend\n")
     end
-    cucumber.uniq
+    cucumber.chunk{|x| x}.map(&:first)
   end
 
   def clean_value(steps)
