@@ -21,8 +21,9 @@
   end
 
   def clean_value(steps)
+    selenium_regex = /(?:.*(?:exact:|glob:|regexp:))?(.*)/
     steps.map do |step|
-      step[:value] = step[:value][/(?:.*(?:exact:|glob:|regexp:))?(.*)/,1]
-      step[:target] = step[:target][/(?:.*(?:exact:|glob:|regexp:))?(.*)/,1]
+      step[:value] = step[:value][selenium_regex,1]
+      step[:target] = step[:target][selenium_regex,1]
     end
   end
