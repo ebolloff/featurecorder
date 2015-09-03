@@ -1,7 +1,7 @@
 COMMANDS =
   { open: {
-      command: lambda { |target, value| "visit #{target}" },
-      sentence: lambda { |target, value| "When I visit #{target}" }
+      command: lambda { |target, value| "visit '#{target}'" },
+      sentence: lambda { |target, value| "When I visit '#{target.gsub('/','\\\\/')}'" }
       },
     click: {
       command: lambda { |target, value| "click_on('#{target}')" },
@@ -43,22 +43,12 @@ COMMANDS =
     #WaitForElementPresent: {command: , sentence: }
   }
 
-TARGETS =
-  {
-    '/' => 'root_path'
-  }
-
 BEGIN {
   def target(target)
-    if TARGETS[target].nil?
-      t = target[/=\W*([^']+)/]
-      if t
-        t[$1]
-      else
-        target
-      end
+    if target.include? "="
+      target[/=\W*([^']+)/][$1]
     else
-      TARGETS[target]
+      target
     end
   end
 }

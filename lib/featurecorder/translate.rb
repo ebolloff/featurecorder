@@ -1,7 +1,7 @@
   def create_feature(steps)
     feature = steps.map do |step|
       COMMANDS[step[:command].to_sym][:sentence].
-      (target(step[:target]), step[:value])
+      (target(step[:target]), step[:value]).gsub('\/','/')
     end
   end
 
@@ -11,13 +11,13 @@
       commands.push(COMMANDS[step[:command].to_sym][:command].
       (target(step[:target]), step[:value]))
     end
-    cucumber = []
+    step_def = []
     feature.each do |step|
       str = step.split(' ', 2)
-      cucumber.push("#{str.first}(/^#{str.last.gsub(/([?+*{}])/,
+      step_def.push("#{str.first}(/^#{str.last.gsub(/([?+\/*{}])/,
        '\\\\\1')}$/) do\n\t#{commands.shift}\nend\n")
     end
-    cucumber.chunk{|x| x}.map(&:first)
+    step_def.chunk{|x| x}.map(&:first)
   end
 
   def clean_value(steps)
