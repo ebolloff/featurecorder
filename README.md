@@ -8,7 +8,7 @@ This gem was build to translate recorded XML Selenium tests to Cucumber. At the 
 
 ## Installation
 
-This gem is not hosted on rubygems.org, so to install it you need to download it and run 
+This gem is not hosted on rubygems.org, so to install it you need to download it and run
 
 ```
 bundle
@@ -46,7 +46,7 @@ After that you need to change some options in Selenium. Start Selenium and click
 
 Now Selenium will record the elements with the ID, not the css selector because unexcact.
 
-So let's record some tests. Start Selenium, go to test.ontohub.org and click the record button. Everything you interact with the site now will be recorded. With a right click you can add commands like `assertText` or `verifyTitle` so check, if a expected element is present. If you're done just click the record button again and the record will stop. Now you can export the test as XML via File -> Export Test Case As... -> XML Formatter.
+So let's record some tests. Please check in the Ontohub project that the test you want to record doesn't exist already. Also notice, that Selenium will record every input as plaintext, so create a new account with a different password on test.ontohub.org. Start Selenium, go to test.ontohub.org and click the record button. Everything you interact with the site now will be recorded. With a right click you can add commands like `assertText` or `verifyTitle` so check, if a expected element is present. If you're done just click the record button again and the record will stop. Now you can export the test as XML via File -> Export Test Case As... -> XML Formatter.
 
 The time is now that you need to install this gem. With `featurecorder -h` you can see the options of this gem.
 
@@ -60,4 +60,4 @@ The time is now that you need to install this gem. With `featurecorder -h` you c
                                     Default is current directory.
     -h --help                       Show this screen.
 
-With the option `-s`/`--scenario-name` you can choose the name for the scenario, with `-f`/`--feature-name` the name for the feature. `-o`/`--output-directory` lets you decide where you want to save the generated files for Cucumber. If you call `featurecorder` you need to state the XML file. If you're ready you can post the files in a pull request in our [Ontohub project](https://github.com/ontohub/ontohub/pulls).
+With the option `-s`/`--scenario-name` you can choose the name for the scenario, with `-f`/`--feature-name` the name for the feature. `-o`/`--output-directory` lets you decide where you want to save the generated files for Cucumber. If you call `featurecorder` you need to state the XML file. If you're ready, fork the [Ontohub project](https://github.com/ontohub/ontohub/pulls) and you can post the files in a pull request.
