@@ -19,10 +19,6 @@ COMMANDS =
       command: lambda { |target, value| "page.should have_content('#{target}')" },
       sentence: lambda { |target, value| "Then I should see the title '#{target}'" }
       },
-    verifyTextPresent: {
-      command: lambda { |target, value| "page.should have_content('#{value}')" },
-      sentence: lambda { |target, value| "Then I should see the text '#{value}'" }
-      },
     verifyElementPresent: {
       command: lambda { |target, value| "page.should have_css('#{target}')" },
       sentence: lambda { |target, value| "Then I should see '#{target}'" }
