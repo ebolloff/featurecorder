@@ -1,22 +1,22 @@
 Feature: Featurecorder
 
 Scenario: Parse valid XML Selenium file with parameters
-When I run `featurecorder ../../features/fixtures/login_cat.xml -f "global search" -s "search for cat"`
+When I run `featurecorder ../../features/fixtures/pizza.xml -f "global search" -s "search for pizza"`
 Then the exit status should be 0
 And a file named "GlobalSearch.feature" should exist
 And a file named "global_search_steps.rb" should exist
 And the file "GlobalSearch.feature" should contain "Feature: global search"
-And the file "GlobalSearch.feature" should contain "Scenario: search for cat"
+And the file "GlobalSearch.feature" should contain "Scenario: search for pizza"
 
 Scenario: Parse valid XML Selenium file interactively
-When I run `featurecorder ../../features/fixtures/login_cat.xml` interactively
+When I run `featurecorder ../../features/fixtures/pizza.xml` interactively
 And I type "global search"
-And I type "search for cat"
+And I type "search for pizza"
 Then the exit status should be 0
 And a file named "GlobalSearch.feature" should exist
 And a file named "global_search_steps.rb" should exist
 And the file "GlobalSearch.feature" should contain "Feature: global search"
-And the file "GlobalSearch.feature" should contain "Scenario: search for cat"
+And the file "GlobalSearch.feature" should contain "Scenario: search for pizza"
 
 Scenario: Parse invalid XML file
 When I run `featurecorder ../../features/fixtures/invalid_empty_file`
@@ -40,12 +40,12 @@ And a file matching %r<.*\.rb> should not exist
 And a file matching %r<.*\.feature> should not exist
 
 Scenario: Parse to forbidden directory
-When I run `featurecorder ../../features/fixtures/login_cat.xml -f "global search" -s "search for cat" -o /`
+When I run `featurecorder ../../features/fixtures/pizza.xml -f "global search" -s "search for pizza" -o /`
 Then the exit status should be 1
 And the stderr should contain "Permission denied on /"
 
 Scenario: Parse to non-existent directory
-When I run `featurecorder ../../features/fixtures/login_cat.xml -f "global search" -s "search for cat" -o /foobar`
+When I run `featurecorder ../../features/fixtures/pizza.xml -f "global search" -s "search for pizza" -o /foobar`
 Then the exit status should be 1
 And the stderr should contain "Could not find /foobar"
 

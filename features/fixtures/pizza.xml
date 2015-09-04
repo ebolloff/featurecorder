@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase seleniumIDEVersion="2.9.0" baseURL="http://td.iws.cs.ovgu.de/">
+<selenese>
+	<command>open</command>
+	<target><![CDATA[/]]></target>
+	<value><![CDATA[]]></value>
+</selenese>
+<selenese>
+	<command>assertText</command>
+	<target><![CDATA[//main[@id='content']/div/div[2]/div/div/div[2]/div/div]]></target>
+	<value><![CDATA[exact:New to Ontohub? Sign up!]]></value>
+</selenese>
+<selenese>
+	<command>type</command>
+	<target><![CDATA[id=signin_email]]></target>
+	<value><![CDATA[admin@example.com]]></value>
+</selenese>
+<selenese>
+	<command>type</command>
+	<target><![CDATA[id=signin_email]]></target>
+	<value><![CDATA[admin@example.com]]></value>
+</selenese>
+<selenese>
+	<command>type</command>
+	<target><![CDATA[id=signin_password]]></target>
+	<value><![CDATA[changeme]]></value>
+</selenese>
+<selenese>
+	<command>type</command>
+	<target><![CDATA[id=signin_password]]></target>
+	<value><![CDATA[changeme]]></value>
+</selenese>
+<selenese>
+	<command>click</command>
+	<target><![CDATA[//input[@value='Sign In']]]></target>
+	<value><![CDATA[]]></value>
+</selenese>
+<selenese>
+	<command>clickAndWait</command>
+	<target><![CDATA[//input[@value='Sign In']]]></target>
+	<value><![CDATA[]]></value>
+</selenese>
+<selenese>
+	<command>verifyTitle</command>
+	<target><![CDATA[Home · Ontohub β]]></target>
+	<value><![CDATA[]]></value>
+</selenese>
+<selenese>
+	<command>click</command>
+	<target><![CDATA[link=Ontologies]]></target>
+	<value><![CDATA[]]></value>
+</selenese>
+<selenese>
+	<command>clickAndWait</command>
+	<target><![CDATA[link=Ontologies]]></target>
+	<value><![CDATA[]]></value>
+</selenese>
+<selenese>
+	<command>assertTitle</command>
+	<target><![CDATA[ontologies - index · Ontohub β]]></target>
+	<value><![CDATA[]]></value>
+</selenese>
+<selenese>
+	<command>verifyText</command>
+	<target><![CDATA[//main[@id='content']/div/div[2]/div/p]]></target>
+	<value><![CDATA[22 ontologies currently available]]></value>
+</selenese>
+<selenese>
+	<command>type</command>
+	<target><![CDATA[id=query]]></target>
+	<value><![CDATA[Pizza]]></value>
+</selenese>
+<selenese>
+	<command>type</command>
+	<target><![CDATA[id=query]]></target>
+	<value><![CDATA[Pizza]]></value>
+</selenese>
+<selenese>
+	<command>assertText</command>
+	<target><![CDATA[//div[@id='search_response']/h2]]></target>
+	<value><![CDATA[Pizza .owl]]></value>
+</selenese>
+<selenese>
+	<command>click</command>
+	<target><![CDATA[link=Pizza]]></target>
+	<value><![CDATA[]]></value>
+</selenese>
+<selenese>
+	<command>clickAndWait</command>
+	<target><![CDATA[link=Pizza]]></target>
+	<value><![CDATA[]]></value>
+</selenese>
+<selenese>
+	<command>verifyText</command>
+	<target><![CDATA[//main[@id='content']/div/div[2]/div/p[2]]]></target>
+	<value><![CDATA[Dolorem temporibus aliquam sed quis porro quia. Consequatur at quis. Quod expedita corporis excepturi. Consequuntur non modi.]]></value>
+</selenese>
+<selenese>
+	<command>verifyElementPresent</command>
+	<target><![CDATA[link=exact:http://td.iws.cs.ovgu.de/default/pizza]]></target>
+	<value><![CDATA[]]></value>
+</selenese>
+</TestCase>
