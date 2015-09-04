@@ -38,9 +38,7 @@ COMMANDS =
     type: {
       command: lambda { |target, value| "fill_in('#{target}', :with => '#{value}')" },
       sentence: lambda { |target, value| "When I fill in '#{target}' with '#{value}'" }
-      },
-    #verifyTable: { command: , sentence: },
-    #WaitForElementPresent: {command: , sentence: }
+      }
   }
 
 BEGIN {

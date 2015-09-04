@@ -48,7 +48,7 @@ module Featurecorder
       feature_file_name = "#{Ascii.process(feature_name.split(' ').
         each { |word| word.capitalize! }.join(''))}.feature"
       File.open("#{output_dir}/#{feature_file_name}", 'w') do |file|
-        file.write("Feature: #{feature_name}\n\nScenario: #{scenario_name}\n\n" +
+        file.write("@recorded\nFeature: #{feature_name}\n\nScenario: #{scenario_name}\n" +
           feature.chunk{|x| x}.map(&:first).join("\n"))
         file.close
       end
