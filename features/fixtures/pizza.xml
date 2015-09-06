@@ -11,6 +11,11 @@
 	<value><![CDATA[exact:New to Ontohub? Sign up!]]></value>
 </selenese>
 <selenese>
+	<command>waitForTitle</command>
+	<target><![CDATA[Home · Ontohub β]]></target>
+	<value><![CDATA[]]></value>
+</selenese>
+<selenese>
 	<command>type</command>
 	<target><![CDATA[id=signin_email]]></target>
 	<value><![CDATA[admin@example.com]]></value>

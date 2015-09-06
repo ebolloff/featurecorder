@@ -7,6 +7,7 @@ And a file named "GlobalSearch.feature" should exist
 And a file named "global_search_steps.rb" should exist
 And the file "GlobalSearch.feature" should contain "Feature: global search"
 And the file "GlobalSearch.feature" should contain "Scenario: search for pizza"
+And the file "global_search_steps.rb" should contain "#This command is not yet supported by featurecorder"
 
 Scenario: Parse valid XML Selenium file interactively
 When I run `featurecorder ../../features/fixtures/pizza.xml` interactively
@@ -17,6 +18,7 @@ And a file named "GlobalSearch.feature" should exist
 And a file named "global_search_steps.rb" should exist
 And the file "GlobalSearch.feature" should contain "Feature: global search"
 And the file "GlobalSearch.feature" should contain "Scenario: search for pizza"
+And the file "global_search_steps.rb" should contain "#This command is not yet supported by featurecorder"
 
 Scenario: Parse invalid XML file
 When I run `featurecorder ../../features/fixtures/invalid_empty_file`

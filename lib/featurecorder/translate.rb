@@ -2,7 +2,7 @@
     feature = steps.map do |step|
       if COMMANDS[step[:command].to_sym].nil?
         COMMANDS[:unsupported][:sentence].
-        (step[:command], target(step[:target]), step[:value])
+        (step[:command], target(step[:target]), step[:value]).gsub('\/','/')
       else
         COMMANDS[step[:command].to_sym][:sentence].
         (target(step[:target]), step[:value]).gsub('\/','/')
