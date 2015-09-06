@@ -46,7 +46,7 @@ After that you need to change some options in Selenium. Start Selenium and click
 
 Now Selenium will record the elements with the ID, not the css selector because unexcact.
 
-So let's record some tests. Please check in the Ontohub project that the test you want to record doesn't exist already. Also notice, that Selenium will record every input as plaintext, so create a new account with a different password on test.ontohub.org. Start Selenium, go to test.ontohub.org and click the record button. Everything you interact with the site now will be recorded. With a right click you can add commands like `assertText` or `verifyTitle` so check, if a expected element is present. If you're done just click the record button again and the record will stop. Now you can export the test as XML via File -> Export Test Case As... -> XML Formatter.
+So let's record some tests. Please check in the Ontohub project that the test you want to record doesn't exist already. Also notice, that Selenium will record every input as plaintext, so create a new account with a different password on test.ontohub.org. Start Selenium, go to test.ontohub.org and click the record button. Everything you interact with the site now will be recorded. With a right click you can add commands like `assertText` or `verifyTitle` so check, if a expected element is present. Please just use the `assert*` and `verify*` commands, because the other ones aren't supported. If you're done just click the record button again and the record will stop. Now you can export the test as XML via File -> Export Test Case As... -> XML Formatter.
 
 The time is now that you need to install this gem. With `featurecorder -h` you can see the options of this gem.
 

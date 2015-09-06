@@ -105,4 +105,9 @@
 	<target><![CDATA[link=exact:http://td.iws.cs.ovgu.de/default/pizza]]></target>
 	<value><![CDATA[]]></value>
 </selenese>
+<selenese>
+	<command>assertElementPresent</command>
+	<target><![CDATA[link=exact:http://td.iws.cs.ovgu.de/default/pizza]]></target>
+	<value><![CDATA[]]></value>
+</selenese>
 </TestCase>

@@ -19,10 +19,6 @@ COMMANDS =
       command: lambda { |target, value| "page.should have_content('#{target}')" },
       sentence: lambda { |target, value| "Then I should see the title '#{target}'" }
       },
-    assertTitle: {
-      command: lambda { |target, value| "page.should have_content('#{target}')" },
-      sentence: lambda { |target, value| "Then I should see the title '#{target}'" }
-      },
     verifyElementPresent: {
       command: lambda { |target, value| "page.should have_css('#{target}')" },
       sentence: lambda { |target, value| "Then I should see '#{target}'" }
@@ -31,9 +27,17 @@ COMMANDS =
       command: lambda { |target, value| "page.should have_content('#{value}')" },
       sentence: lambda { |target, value| "Then I should see the text '#{value}'" }
       },
+    assertTitle: {
+      command: lambda { |target, value| "page.should have_content('#{target}')" },
+      sentence: lambda { |target, value| "Then I should see the title '#{target}'" }
+      },
     assertText: {
       command: lambda { |target, value| "page.should have_content('#{value}')" },
       sentence: lambda { |target, value| "Then I should see the text '#{value}'" }
+      },
+    assertElementPresent: {
+      command: lambda { |target, value| "page.should have_css('#{target}')" },
+      sentence: lambda { |target, value| "Then I should see '#{target}'" }
       },
     unsupported: {
       command: "#This command is not yet supported by featurecorder",
