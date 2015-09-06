@@ -10,7 +10,11 @@ COMMANDS =
     clickAndWait: {
       command: lambda { |target, value| "click_on('#{target}')" },
       sentence: lambda { |target, value| "When I click on '#{target}'" }
-      }, #waitForPageToLoad
+      },
+    type: {
+      command: lambda { |target, value| "fill_in('#{target}', :with => '#{value}')" },
+      sentence: lambda { |target, value| "When I fill in '#{target}' with '#{value}'" }
+      },
     verifyTitle: {
       command: lambda { |target, value| "page.should have_content('#{target}')" },
       sentence: lambda { |target, value| "Then I should see the title '#{target}'" }
@@ -31,10 +35,10 @@ COMMANDS =
       command: lambda { |target, value| "page.should have_content('#{value}')" },
       sentence: lambda { |target, value| "Then I should see the text '#{value}'" }
       },
-    type: {
-      command: lambda { |target, value| "fill_in('#{target}', :with => '#{value}')" },
-      sentence: lambda { |target, value| "When I fill in '#{target}' with '#{value}'" }
-      }
+    unsupported: {
+      command: "#This command is not yet supported by featurecorder",
+      sentence: lambda { |command, target, value| "When I run the command '#{command}' with target '#{target}' and value '#{value}'" }
+    }
   }
 
 BEGIN {

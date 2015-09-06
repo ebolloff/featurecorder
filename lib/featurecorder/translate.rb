@@ -1,15 +1,24 @@
   def create_feature(steps)
     feature = steps.map do |step|
-      COMMANDS[step[:command].to_sym][:sentence].
-      (target(step[:target]), step[:value]).gsub('\/','/')
+      if COMMANDS[step[:command].to_sym].nil?
+        COMMANDS[:unsupported][:sentence].
+        (step[:command], target(step[:target]), step[:value])
+      else
+        COMMANDS[step[:command].to_sym][:sentence].
+        (target(step[:target]), step[:value]).gsub('\/','/')
+      end
     end
   end
 
   def create_steps(feature, steps)
     commands = []
     steps.each do |step|
-      commands.push(COMMANDS[step[:command].to_sym][:command].
-      (target(step[:target]), step[:value]))
+      if COMMANDS[step[:command].to_sym].nil?
+        commands.push(COMMANDS[:unsupported][:command])
+      else
+        commands.push(COMMANDS[step[:command].to_sym][:command].
+        (target(step[:target]), step[:value]))
+      end
     end
     step_def = []
     feature.each do |step|
