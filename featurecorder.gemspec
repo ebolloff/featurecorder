@@ -9,9 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Eileen Bolloff"]
   spec.email         = ["ebolloff@tzi.de"]
 
-  spec.summary       = %q{Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{Write a longer description or delete this line.}
-  spec.homepage      = "http://www.foobar.de"
+  spec.summary       = "This gem translates recorded Selenium XML tests to Cucumber."
+  spec.homepage      = "https://github.com/ebolloff/featurecorder"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
